@@ -3,9 +3,14 @@ using System.Collections.Generic;
 
 namespace Practice3d
 {
-    public class Vec3<Type>
+    public class Vec3<T>
     {
-            public Type x,y,z;
+            public T x,y,z;
+
+            public T dot(Vec3<T> v)
+            {
+                return x*v.x + y*v.y + z*v.z;
+            }
     }
 
 }
@@ -18,6 +23,14 @@ namespace Practice3d
     {
         public Vec3f origin;
         public float radius;
+
+        public bool intersectIn(Vec3f rayOrigin, Vec3f rayDir, out float t1, out float t2)
+        {
+            t1 = 0;
+            t2 = 0;
+            var a = 
+            return true;
+        }
     }
 
     public class FirstRayTracer
@@ -25,10 +38,8 @@ namespace Practice3d
         Vec3f trace(Vec3f rayOrigin, Vec3f rayDir, List<Sphere> objs, int depth)
         {
             //find the most close object hit by the ray
-            //get itself color
-            //get reflect color
-            //get refraction color
-            //mix
+            //if no object hited, return env color
+            //else return object color
             return new Vec3f();
         }
 
